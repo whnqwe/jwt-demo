@@ -1,5 +1,20 @@
 package com.zhangspace.jwt.util;
 
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+import javax.crypto.spec.SecretKeySpec;
+import javax.xml.bind.DatatypeConverter;
+import java.security.Key;
+import java.util.Map;
+import java.util.UUID;
+
+
 public class JwtTokenUtils {
     public static void main(String[] args) {
         System.out.println(UUID.randomUUID().
