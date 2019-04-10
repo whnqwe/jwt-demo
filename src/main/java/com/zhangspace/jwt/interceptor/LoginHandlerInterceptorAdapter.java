@@ -1,7 +1,6 @@
 package com.zhangspace.jwt.interceptor;
 
 import com.zhangspace.jwt.annotation.Anoymous;
-import com.zhangspace.jwt.constants.GpmallWebConstant;
 import com.zhangspace.jwt.controller.BaseController;
 import com.zhangspace.jwt.dto.CheckAuthRequest;
 import com.zhangspace.jwt.dto.CheckAuthResponse;
@@ -49,7 +48,7 @@ public class LoginHandlerInterceptorAdapter extends HandlerInterceptorAdapter {
                 response.getWriter().write("{\"code\":\"-1\",\"msg\":\"error\"}");
                 return false;
             }
-            response.sendRedirect(GpmallWebConstant.GPMALL_SSO_ACCESS_URL);
+            response.sendRedirect("http://127.0.0.1:8080/static/login.html");
             return false;
         }
         CheckAuthRequest checkAuthRequest=new CheckAuthRequest();
@@ -66,7 +65,7 @@ public class LoginHandlerInterceptorAdapter extends HandlerInterceptorAdapter {
                     ",\"msg\":\""+checkAuthResponse.getMsg()+"\"}");
             return false;
         }
-        response.sendRedirect(GpmallWebConstant.GPMALL_SSO_ACCESS_URL);
+        response.sendRedirect("http://127.0.0.1:8080/static/login.html");
         return false;
     }
 
